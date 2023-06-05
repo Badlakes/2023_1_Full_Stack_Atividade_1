@@ -1,0 +1,1 @@
+Eu estava tentando seguir um tutorial para auxiliar a criação, em algum momento acabei envolvendo mais código do que eu esperava e estou com problemas para realizar as requisições na API na minha máquina, estou testando se consigo arrumar isso, mas já estou atrasado com a entrega, então vou deixar aqui para pelo menos poder mostrar o que eu estava fazendo até o momento

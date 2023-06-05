@@ -1,0 +1,47 @@
+-- Tabela de usuários
+CREATE TABLE users (
+  id serial not null PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  age INT,
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL
+);
+
+-- Tabela de jogos
+CREATE TABLE games (
+  id serial not null PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  overall_rating DECIMAL(3, 2) NOT NULL
+);
+
+-- Tabela de reviews
+CREATE TABLE reviews (
+  id serial not null PRIMARY KEY,
+  user_id INT NOT NULL,
+  game_id INT NOT NULL,
+  rating DECIMAL(3, 2) NOT NULL,
+  comment TEXT,
+  FOREIGN KEY (user_id) REFERENCES users(id),
+  FOREIGN KEY (game_id) REFERENCES games(id)
+);
+
+-- Inserção de exemplo tabela de usuários
+INSERT INTO users (name, age, email, password)
+VALUES
+  ('Renato', 25, 'Renato@mail.com', 'Renato@1998'),
+  ('Sérgio', 30, 'Sergio@mail.com', 'Sérgio#1993'),
+  ('Carlos', 28, 'Carlos@mail.com', 'Carlos!1995');
+
+-- Inserção de exemplo tabela de jogos
+INSERT INTO games (name, overall_rating)
+VALUES
+  ('Plants Vs Zombies', 9.5),
+  ('Call of Duty', 7.2),
+  ('Black desert', 5.9);
+
+-- Inserção de exemplo tabela de reviews
+INSERT INTO reviews (user_id, game_id, rating, comment)
+VALUES
+  (10, 10, 9, 'Excelente jogo, altamente recomendado.'),
+  (11, 11, 7, 'Gráficos incríveis e jogabilidade viciante.'),
+  (12, 12, 5, 'Gostei do jogo, mas poderia ter mais conteúdo.');
